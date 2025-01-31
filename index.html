@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>摇滚音乐推广网站</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"
+     crossorigin="anonymous"></script>
+    
+    <!-- 百度联盟 -->
+    <script>
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div style="" id="' + s + '"></div>');
+            (window.slotbydup = window.slotbydup || []).push({
+                id: 'YOUR_BAIDU_AD_ID',
+                container: s,
+                size: '300,250',
+                display: 'inlay-fix'
+            });
+        })();
+    </script>
+    <script src="https://dup.baidustatic.com/js/os.js"></script>
+</head>
+<body>
+    <!-- 顶部广告位 -->
+    <div class="ad-container header">
+        <div class="ad-label">广告位示例</div>
+        <div class="test-ad">
+            <img src="images/ad-demo.jpg" alt="广告示例">
+            <p>广告标题示例</p>
+            <p class="ad-description">这是一个广告描述示例，展示广告内容和布局效果</p>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="logo">
+            <h1>摇滚力量</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">首页</a></li>
+            <li><a href="#legends">摇滚名人</a></li>
+            <li><a href="#music">音乐</a></li>
+            <li><a href="#artists">艺人</a></li>
+            <li><a href="#news">动态</a></li>
+            <li><a href="#contact">联系我们</a></li>
+        </ul>
+    </nav>
+
+    <!-- 首页横幅 -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>感受摇滚精神</h1>
+            <p>探索经典摇滚音乐，发现新生代力量</p>
+
+            <!-- 添加音乐播放器 -->
+            <div class="music-player">
+                <div class="player-content">
+                    <div class="vinyl-container">
+                        <div class="vinyl-record">
+                            <div class="vinyl-disk">
+                                <img src="images/vinyl.png" alt="Vinyl" class="vinyl-img">
+                                <img src="images/music1.jpg" alt="Album Cover" class="album-cover">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="player-controls">
+                        <div class="song-info">
+                            <h3 class="current-song">Paradise City</h3>
+                            <p class="current-artist">Guns N' Roses</p>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress"></div>
+                            </div>
+                            <div class="time-info">
+                                <span class="current-time">0:00</span>
+                                <span class="duration">0:00</span>
+                            </div>
+                        </div>
+                        <div class="controls">
+                            <button class="prev-btn">⏮</button>
+                            <button class="play-btn">▶</button>
+                            <button class="next-btn">⏭</button>
+                            <div class="volume-control">
+                                <span class="volume-icon">🔊</span>
+                                <input type="range" class="volume-slider" min="0" max="100" value="100">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 摇滚名人堂部分 -->
+    <section id="legends" class="legends-section">
+        <h2>摇滚名人</h2>
+        <div class="legends-container">
+            <div class="legends-intro">
+                <h3>传奇永存</h3>
+                <p>这里记录着那些改变音乐历史的传奇人物，他们的音乐跨越时空，影响着一代又一代人。</p>
+            </div>
+            <div class="legends-grid">
+                <!-- 名人堂卡片将通过 JS 动态添加 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 音乐列表部分 -->
+    <section id="music" class="music-section">
+        <h2>经典摇滚</h2>
+        <div class="music-grid">
+            <!-- 音乐卡片将通过 JS 动态添加 -->
+        </div>
+    </section>
+
+    <!-- 艺人介绍部分 -->
+    <section id="artists" class="artists-section">
+        <h2>摇滚乐队</h2>
+        <div class="artists-grid">
+            <!-- 艺人卡片将通过 JS 动态添加 -->
+        </div>
+    </section>
+
+    <!-- 最新动态部分 -->
+    <section id="news" class="news-section">
+        <h2>最新动态</h2>
+        <div class="news-grid">
+            <!-- 新闻卡片将通过 JS 动态添加 -->
+        </div>
+    </section>
+
+    <!-- 联系方式部分 -->
+    <section id="contact" class="contact-section">
+        <h2>联系我们</h2>
+        <div class="contact-form">
+            <form id="contactForm">
+                <input type="text" placeholder="您的姓名" required>
+                <input type="email" placeholder="电子邮箱" required>
+                <textarea placeholder="留言内容" required></textarea>
+                <button type="submit">发送消息</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 底部广告位 -->
+    <div class="ad-container footer">
+        <div class="ad-label">广告</div>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+             data-ad-slot="YOUR_AD_SLOT_ID"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <!-- 侧边栏广告位 -->
+    <div class="ad-container sidebar">
+        <div class="ad-label">广告</div>
+        <script>
+            (function() {
+                var s = "_" + Math.random().toString(36).slice(2);
+                document.write('<div id="' + s + '"></div>');
+                (window.slotbydup = window.slotbydup || []).push({
+                    id: 'u12345679',  // 替换为您的广告位ID
+                    container: s,
+                    size: '160,600',  // 竖幅尺寸
+                    display: 'inlay-fix'
+                });
+            })();
+        </script>
+    </div>
+
+    <!-- 内容间广告位 -->
+    <div class="ad-container">
+        <div class="ad-label">广告</div>
+        <script>
+            (function() {
+                var s = "_" + Math.random().toString(36).slice(2);
+                document.write('<div id="' + s + '"></div>');
+                (window.slotbydup = window.slotbydup || []).push({
+                    id: 'u12345680',  // 替换为您的广告位ID
+                    container: s,
+                    size: '300,250',  // 矩形尺寸
+                    display: 'inlay-fix'
+                });
+            })();
+        </script>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>&copy; 2024 音乐推广网站. 保留所有权利.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+    <!-- 百度统计代码 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?YOUR_SITE_ID"; // 替换为您的百度统计ID
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html> 

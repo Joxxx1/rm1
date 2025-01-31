@@ -1,0 +1,1250 @@
+/* 重置默认样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* 导航栏样式 */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--secondary-color);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.logo h1 {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s;
+    cursor: url('../images/rock_hand.png'), pointer;
+}
+
+.nav-links li a:hover {
+    color: var(--primary-color);
+}
+
+/* 首页横幅样式 */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+/* 音乐播放器容器效果 */
+.music-player {
+    position: relative;
+    z-index: 2;
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 
+        0 0 20px rgba(255,0,0,0.2),
+        0 0 40px rgba(255,0,0,0.1);
+    animation: glow-pulse 4s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+    0% { box-shadow: 0 0 20px rgba(255,0,0,0.2), 0 0 40px rgba(255,0,0,0.1); }
+    50% { box-shadow: 0 0 30px rgba(255,0,0,0.3), 0 0 60px rgba(255,0,0,0.2); }
+    100% { box-shadow: 0 0 20px rgba(255,0,0,0.2), 0 0 40px rgba(255,0,0,0.1); }
+}
+
+/* 通用部分样式 */
+section {
+    padding: 5rem 2rem;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* 音乐网格样式 */
+.music-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+/* 艺人网格样式 */
+.artists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    padding: 0 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* 新闻网格样式 */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+/* 联系表单样式 */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.contact-form button {
+    padding: 1rem;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.contact-form button:hover {
+    background: #ff6666;
+}
+
+/* 页脚样式 */
+footer {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* 访问统计样式 */
+.visit-stats {
+    color: #888;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+} 
+
+/* 音乐卡片样式 */
+.music-card {
+    background: var(--secondary-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid var(--primary-color);
+}
+
+.music-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 68, 68, 0.3);
+}
+
+.music-cover {
+    position: relative;
+    padding-top: 100%;
+}
+
+.music-cover img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.music-cover:hover .play-button {
+    opacity: 1;
+}
+
+.music-info {
+    padding: 1rem;
+}
+
+/* 艺人卡片样式 */
+.artist-card {
+    background: linear-gradient(145deg, rgba(30, 30, 30, 0.9), rgba(20, 20, 20, 0.95));
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 
+        0 15px 30px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+.artist-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 
+        0 20px 40px rgba(255, 68, 68, 0.2),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/* 艺人照片容器 */
+.artist-photo {
+    position: relative;
+    overflow: hidden;
+    padding-top: 75%; /* 4:3 比例 */
+}
+
+.artist-photo img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: brightness(0.9) contrast(1.1);
+}
+
+.artist-card:hover .artist-photo img {
+    transform: scale(1.1);
+}
+
+/* 艺人信息样式 */
+.artist-info {
+    padding: 2rem;
+    position: relative;
+}
+
+.artist-info h3 {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.artist-info .genre {
+    color: var(--primary-color);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.artist-info .description {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin: 1.5rem 0;
+    font-size: 1rem;
+}
+
+/* 奖项列表样式 */
+.awards {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.awards h4 {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.awards ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.awards li {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.awards li::before {
+    content: '🏆';
+    position: absolute;
+    left: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* 添加艺人社交媒体链接 */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .artists-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+
+    .artist-info {
+        padding: 1.5rem;
+    }
+
+    .artist-info h3 {
+        font-size: 1.5rem;
+    }
+
+    .awards li {
+        font-size: 0.9rem;
+    }
+}
+
+/* 新闻卡片样式 */
+.news-card {
+    background: linear-gradient(145deg, rgba(30, 30, 30, 0.9), rgba(20, 20, 20, 0.95));
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 
+        0 15px 30px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+}
+
+.news-card:hover {
+    transform: translateY(-10px);
+}
+
+/* 新闻图片容器样式 */
+.news-image {
+    position: relative;
+    padding-top: 66.67%; /* 维持 3:2 的宽高比 */
+    overflow: hidden;
+}
+
+.news-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: brightness(0.9) contrast(1.1);
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.news-card:hover .news-image img {
+    transform: scale(1.1);
+}
+
+/* 分类标签样式 */
+.category {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: linear-gradient(135deg, var(--primary-color), #ff6666);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 10px rgba(255, 68, 68, 0.3);
+}
+
+/* 新闻内容样式 */
+.news-content {
+    padding: 2rem;
+    background: linear-gradient(180deg, 
+        rgba(20, 20, 20, 0) 0%,
+        rgba(20, 20, 20, 0.95) 100%);
+}
+
+.news-content h3 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.date, .author {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.date::before {
+    content: '📅';
+    margin-right: 0.5rem;
+}
+
+.author::before {
+    content: '✍️';
+    margin-right: 0.5rem;
+}
+
+.excerpt {
+    margin: 1.5rem 0;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* 新闻区域整体样式 */
+.news-section {
+    background: linear-gradient(to bottom, var(--background-color), rgba(26, 26, 26, 0.95));
+    padding: 6rem 2rem;
+}
+
+.news-section h2 {
+    font-size: 3rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* 新闻网格布局优化 */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .news-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+
+    .news-content {
+        padding: 1.5rem;
+    }
+
+    .news-content h3 {
+        font-size: 1.3rem;
+    }
+}
+
+/* 添加摇滚风格的装饰元素 */
+.section-title {
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.section-title::before,
+.section-title::after {
+    content: "★";
+    color: var(--primary-color);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.section-title::before {
+    left: -10px;
+}
+
+.section-title::after {
+    right: -10px;
+}
+
+/* 添加动画效果 */
+@keyframes rockPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.music-card:hover .play-button {
+    animation: rockPulse 1s infinite;
+} 
+
+/* 添加CSS变量 */
+:root {
+    --primary-color: #ff4444;
+    --secondary-color: #1a1a1a;
+    --accent-color: #ffd700;
+    --text-color: #ffffff;
+    --background-color: #121212;
+    --player-bg: rgba(26, 26, 26, 0.9);
+    --progress-bg: #333;
+}
+
+/* 音乐播放器样式 */
+.music-player {
+    background: linear-gradient(145deg, rgba(26, 26, 26, 0.9), rgba(15, 15, 15, 0.95));
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin: 2rem auto;
+    width: 100%;
+    max-width: 900px;
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.6),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.player-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+/* 唱片容器样式 */
+.vinyl-container {
+    flex-shrink: 0;
+    width: 350px;
+    height: 350px;
+    position: relative;
+    perspective: 1500px;
+    margin: 0 auto;
+    filter: drop-shadow(0 0 20px rgba(255, 68, 68, 0.2));
+}
+
+/* 唱片样式 */
+.vinyl-record {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vinyl-disk {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: rotate 20s linear infinite paused;
+    will-change: transform;
+}
+
+.vinyl-disk.playing {
+    animation-play-state: running;
+}
+
+.vinyl-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    backface-visibility: hidden;
+    filter: brightness(0.9) contrast(1.2);
+    box-shadow: 
+        0 0 0 5px rgba(255, 255, 255, 0.05),
+        0 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.album-cover {
+    position: absolute;
+    width: 45%;
+    height: 45%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: 
+        0 0 30px rgba(0, 0, 0, 0.8),
+        0 0 60px rgba(255, 68, 68, 0.3);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 唱片纹理效果 */
+.vinyl-disk::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-radial-gradient(
+        circle at center,
+        rgba(0, 0, 0, 0.3) 0,
+        rgba(0, 0, 0, 0.3) 2px,
+        rgba(255, 255, 255, 0.15) 2px,
+        rgba(255, 255, 255, 0.15) 4px
+    );
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 
+        inset 0 0 50px rgba(0, 0, 0, 0.8),
+        inset 0 0 20px rgba(255, 68, 68, 0.2);
+}
+
+/* 唱片中心点 */
+.vinyl-disk::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    background: linear-gradient(135deg, var(--accent-color), #fff);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    box-shadow: 
+        0 0 15px rgba(255, 215, 0, 0.5),
+        inset 0 0 8px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* 旋转动画 */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 悬停效果 */
+.vinyl-record:hover {
+    transform: translateZ(30px) rotateX(8deg);
+}
+
+.vinyl-disk:hover .album-cover {
+    transform: translate(-50%, -50%) scale(1.15);
+    box-shadow: 
+        0 0 40px rgba(0, 0, 0, 0.8),
+        0 0 80px rgba(255, 68, 68, 0.4);
+}
+
+/* 播放控制区域样式 */
+.player-controls {
+    flex: 1;
+    min-width: 0;
+    padding: 0 2rem;
+}
+
+.song-info {
+    margin-bottom: 2rem;
+}
+
+.current-song {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.current-artist {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    opacity: 0.9;
+}
+
+/* 进度条样式优化 */
+.progress-container {
+    margin: 2rem 0;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    border-radius: 3px;
+    transition: width 0.1s linear;
+}
+
+.time-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 0.5rem;
+}
+
+/* 控制按钮样式优化 */
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.controls button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    opacity: 0.8;
+}
+
+.controls button:hover {
+    opacity: 1;
+    transform: scale(1.1);
+    color: var(--accent-color);
+}
+
+.play-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, var(--primary-color), #ff6666) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 
+        0 4px 15px rgba(255, 68, 68, 0.4),
+        inset 0 2px 2px rgba(255, 255, 255, 0.2);
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.play-btn:hover {
+    transform: scale(1.05) !important;
+    box-shadow: 
+        0 6px 20px rgba(255, 68, 68, 0.6),
+        inset 0 2px 2px rgba(255, 255, 255, 0.2) !important;
+}
+
+/* 音量控制样式优化 */
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.volume-slider {
+    width: 100px;
+    height: 4px;
+    -webkit-appearance: none;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    outline: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .player-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .vinyl-container {
+        width: 250px;
+        height: 250px;
+    }
+
+    .player-controls {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+} 
+
+/* 阅读更多按钮样式 */
+.read-more {
+    display: inline-block;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 1rem;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: var(--accent-color);
+}
+
+.read-more::after {
+    content: ' →';
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.read-more:hover::after {
+    transform: translateX(5px);
+} 
+
+/* 添加自定义鼠标样式 */
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s;
+    cursor: url('../images/rock_hand.png'), pointer;
+}
+
+/* 为其他可点击元素也添加摇滚手势 */
+.play-btn,
+.prev-btn,
+.next-btn,
+.music-card,
+.artist-card,
+.news-card,
+.read-more,
+.contact-form button {
+    cursor: url('../images/rock_hand.png'), pointer;
+}
+
+/* 鼠标悬停时的效果 */
+.nav-links li a:hover,
+.play-btn:hover,
+.prev-btn:hover,
+.next-btn:hover,
+.music-card:hover,
+.artist-card:hover,
+.news-card:hover,
+.read-more:hover,
+.contact-form button:hover {
+    cursor: url('../images/rock_hand_hover.png'), pointer;
+} 
+
+/* 添加全局鼠标样式 */
+html, 
+body {
+    cursor: url('../images/rock_hand.png'), auto;
+}
+
+/* 所有可点击元素的悬停效果 */
+a, 
+button,
+input[type="submit"],
+.play-btn,
+.prev-btn,
+.next-btn,
+.music-card,
+.artist-card,
+.news-card,
+.read-more,
+.contact-form button,
+.volume-slider,
+.progress-bar {
+    cursor: url('../images/rock_hand.png'), pointer;
+}
+
+/* 悬停状态的鼠标样式 */
+a:hover, 
+button:hover,
+input[type="submit"]:hover,
+.play-btn:hover,
+.prev-btn:hover,
+.next-btn:hover,
+.music-card:hover,
+.artist-card:hover,
+.news-card:hover,
+.read-more:hover,
+.contact-form button:hover,
+.volume-slider:hover,
+.progress-bar:hover {
+    cursor: url('../images/rock_hand_hover.png'), pointer;
+}
+
+/* 文本输入区域保持默认指针 */
+input[type="text"],
+input[type="email"],
+textarea {
+    cursor: text;
+}
+
+/* 添加鼠标悬停效果 */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.hero-content:hover {
+    transform: scale(1.02);
+}
+
+/* 添加粒子效果 */
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: float 20s linear infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* 摇滚名人堂样式 */
+.legends-section {
+    background: linear-gradient(to bottom, var(--background-color), #000);
+    padding: 6rem 2rem;
+    position: relative;
+}
+
+.legends-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/legends-bg.jpg') center/cover fixed;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.legends-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.legends-intro {
+    text-align: center;
+    margin-bottom: 4rem;
+    color: var(--text-color);
+}
+
+.legends-intro h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.legends-intro p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.legends-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    padding: 0 2rem;
+}
+
+.legend-card {
+    background: linear-gradient(145deg, rgba(30, 30, 30, 0.9), rgba(20, 20, 20, 0.95));
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 
+        0 15px 30px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.legend-card:hover {
+    transform: translateY(-10px);
+}
+
+.legend-image {
+    position: relative;
+    padding-top: 100%;
+    overflow: hidden;
+}
+
+.legend-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.legend-card:hover .legend-image img {
+    transform: scale(1.1);
+}
+
+.legend-info {
+    padding: 2rem;
+    color: var(--text-color);
+}
+
+.legend-info h4 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+}
+
+.legend-info .years {
+    font-size: 1rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.legend-info .description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.legend-achievements {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.legend-achievements h5 {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.achievement-list {
+    list-style: none;
+}
+
+.achievement-list li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.achievement-list li::before {
+    content: '★';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+/* 修改摇滚风格的英文名称样式 */
+.genre {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* 括号内的英文名称样式 */
+.genre span {
+    color: #ff3333; /* 红色 */
+    font-style: italic;
+}
+
+/* 广告位样式 */
+.ad-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.ad-container.sidebar {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 160px;
+    z-index: 999;
+}
+
+.ad-container.header {
+    margin-top: 80px; /* 导航栏下方 */
+}
+
+.ad-container.footer {
+    margin-bottom: 2rem;
+}
+
+.ad-label {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 0.5rem;
+}
+
+/* 测试广告样式 */
+.test-ad {
+    width: 100%;
+    height: 100%;
+    background: rgba(50, 50, 50, 0.8);
+    padding: 15px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.test-ad img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.test-ad p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.test-ad .ad-description {
+    font-size: 12px;
+    color: #ccc;
+}
+
+/* 不同尺寸的测试广告 */
+.ad-container.header .test-ad {
+    height: 90px;  /* 横幅广告 */
+}
+
+.ad-container.sidebar .test-ad {
+    height: 600px; /* 侧边栏广告 */
+}
+
+.ad-container .test-ad {
+    height: 250px; /* 矩形广告 */
+} 

@@ -1,0 +1,28 @@
+music-promo-website/
+├── index.html
+├── css/
+│   └── style.css
+├── js/
+│   └── main.js
+├── images/
+│   ├── vinyl.png
+│   ├── hero-bg.jpg
+│   ├── music1.jpg
+│   ├── music2.jpg
+│   ├── music3.jpg
+│   ├── music4.jpg
+│   ├── music5.jpg
+│   ├── artist1.jpg
+│   ├── artist2.jpg
+│   ├── artist3.jpg
+│   ├── artist4.jpg
+│   ├── news1.jpg
+│   ├── news2.jpg
+│   ├── news3.jpg
+│   └── news4.jpg
+└── music/
+    ├── paradise_city.mp3
+    ├── wu_di_zi_rong.mp3
+    ├── nothing_else_matters.mp3
+    ├── jia_xing_seng.mp3
+    └── numb.mp3 
